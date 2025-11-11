@@ -1,0 +1,291 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1c2841;
+    /* width: 100%; */
+}
+
+h1, h2, h3, h4 {
+    font-family: nunito;
+}
+
+p, ul {
+    padding: 0;
+    font-family: rubik;
+    color: white;
+    font-size: 14px;
+    font-weight: 100;
+}
+
+ul {
+  margin: 0;
+  padding-left: 0;
+  list-style-position: inside;
+}
+
+/*SOFT_SKILLS*/
+.soft-skills-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.soft-skills-circles-container {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 95px;
+}
+
+.soft-skill-container-external {
+    width: 180px;
+    height: 180px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border: 1px solid #f64778;
+}
+
+.soft-skill-container {
+    width: 170px;
+    height: 170px;
+    flex-direction: row;
+    background-color: #f64778;
+    border-radius: 100%;
+}
+
+/*PROJECTS*/
+.projects-container {
+    width: 100%;
+    height: 3000px;
+    padding: 0 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.project-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin: 40px 0;
+    border: 5px solid #f64778;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.project-image-container {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: calc(61.8% + 5px);
+    height: calc(100% + 10px);
+    border: 5px solid #f64778;
+    border-radius: 30px;
+    z-index: 2;
+    overflow: hidden;
+    transition: opacity 1.5s ease-in-out, transform .6s ease-in;
+}
+
+.project-container:hover .project-image-container {
+    transform: translateX(61.8%);
+}
+
+.project-image-container img.img1 {
+    opacity: 1;
+}
+
+.project-image-container img.img2 {
+    opacity: 0;
+}
+
+.project-container:hover .project-image-container img.img1 {
+    opacity: 0;
+}
+
+.project-container:hover .project-image-container img.img2 {
+    opacity: 1;
+}
+
+.project-text-container, .project-text-container-left {
+    width: 38.2%;
+    height: 100%;
+    flex-direction: row;
+}
+
+.project-container-internal {
+    border: 1px solid #f64778;
+    border-radius: 22px;
+    padding: 5px;
+    margin: 5px;
+    height: calc(100% - 10px);
+}
+
+.project-image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 0;
+}
+
+h2 {
+    width: 100%;
+    margin: 50px;
+    color: white;
+    text-align: center;
+    font-size: 22px;
+}
+
+h3 {
+    width: 100%;
+    color: white;
+    text-align: left;
+    font-size: 20px;
+}
+
+.project-text {
+    padding-left: 30px;
+    padding-right: 30px;
+    color: white;
+}
+
+h4 {
+    font-size: 16px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+/*HOBBIES*/
+
+.hobbies-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hobbies-circles-container {
+    padding-top: 20px;
+    padding-bottom: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 95px;
+}
+
+.hobby-container-external {
+    width: 180px;
+    height: 180px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border: 1px solid #f64778;
+}
+
+.hobby-container {
+    width: 170px;
+    height: 170px;
+    flex-direction: row;
+    background-color: #f64778;
+    border-radius: 100%;
+}
+
+/*polip*/
+.octopus-container {
+  width: 400px;
+}
+
+#octopus, #bubbles {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+}
+
+#tentacle1, #tentacle2, #tentacle3, #tentacle4 {
+    transform-origin: top center;
+    animation: float-tentacles 6s ease-in-out infinite;
+}
+
+@keyframes float-tentacles {
+    0%, 100% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(0.98) rotate(-0.5deg);
+    }
+}
+
+#tentacle1 { animation-delay: 0s; }
+#tentacle2 { animation-delay: 1s; }
+#tentacle3 { animation-delay: 0.5s; }
+#tentacle4 { animation-delay: 1.5s; }
+
+#head {
+    animation: head-scale 6s ease-in-out infinite;
+}
+
+@keyframes head-scale {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+#pupil-right, #pupil-left {
+    transform-origin: center;
+    animation: pupil-scale 6s ease-in-out infinite;
+}
+
+@keyframes pupil-scale {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+#blush-left, #blush-right {
+    transform-origin: 90px 100px;
+    opacity: 0.9;
+    transform: scale(1);
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+#octopus:hover #blush-left,
+#octopus:hover #blush-right {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+#bubble1, #bubble2, #bubble3 {
+    transform-origin: center center;
+    animation: float-tentacles 6s ease-in-out infinite;
+}
+
+@keyframes float-tentacles {
+    0%, 100% {
+        transform: scaleY(1) scaleZ(1) scaleX(1);
+    }
+    50% {
+        transform: scaleY(0.98) rotate(-0.5deg);
+    }
+}
+
+#bubble1 { animation-delay: 0s; }
+#bubble2 { animation-delay: 1s; }
+#bubble3 { animation-delay: 0.5s; }
