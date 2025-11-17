@@ -220,3 +220,38 @@ function generateCards() {
         })
     })
 }
+
+//flip animation for soft skills
+const skillContainers = document.querySelectorAll('.soft-skill-container');
+const externalContainers = document.querySelectorAll('.soft-skill-container-external');
+
+let paused = false;
+//ms
+const readTime = 6000;
+
+function flipAll() {
+    if (!paused) {
+        skillContainers.forEach(container => container.classList.toggle('flipped'));
+    }
+    setTimeout(flipAll, readTime);
+}
+
+// start
+setTimeout(flipAll, readTime);
+
+// Desktop: hover = pause
+externalContainers.forEach(container => {
+    container.addEventListener('mouseenter', () => paused = true);
+    container.addEventListener('mouseleave', () => paused = false);
+});
+
+// Mobil: tap = pause
+externalContainers.forEach(container => {
+    container.addEventListener('touchstart', () => {
+        paused = !paused;
+    });
+});
+
+
+
+
