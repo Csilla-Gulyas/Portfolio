@@ -7,6 +7,16 @@
 //     });
 // });
 
+// SVG markup betöltése és inline beszúrása, hogy CSS-sel animálható legyen
+document.querySelectorAll("[data-svg]").forEach(async element => {
+    const svgUrl    = element.dataset.svg;
+    const response  = await fetch(svgUrl);
+    const svgMarkup = await response.text();
+
+    element.innerHTML = svgMarkup;
+});
+
+
 let projectGroups = [
     {
         title: "PROJEKTMUNKÁIM",
