@@ -421,6 +421,7 @@ br {
     align-items: center;
     border-radius: 100%;
     border: 1px solid #f64778;
+    overflow: hidden;
 }
 
 .hobby-container {
@@ -429,6 +430,13 @@ br {
     flex-direction: row;
     background-color: #f64778;
     border-radius: 100%;
+    position: relative;
+}
+
+.hobby-container svg {
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 @media (max-width: 1100px) {
