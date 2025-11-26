@@ -7,7 +7,7 @@
 body {
     background-color: #1c2841;
     width: 100%;
-
+    font-family: nunito, sans-serif;
 }
 
 h1, h2, h3, h4 {
@@ -117,39 +117,74 @@ h1, h2, h3, h4 {
 }
 
 .technologies-icon-container {
-    height: 100px;
+    margin: 0 auto;
+    max-width: 100%;
+    overflow: hidden;
     display: flex;
-    justify-content: center;
+    gap: 0;
+
+    &:hover .group {
+        animation-play-state: paused;
+    }
+}
+
+.group {
+    display: flex;
+    gap: 60px;
+    will-change: transform;
+    animation: horizontal-scrolling 20s linear infinite;
+    padding: 0 30px;
+}
+
+@keyframes horizontal-scrolling {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.technology {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    gap: 18px;
-    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.technology-text {
+    font-size: 28px;
+    color: #fff;
+    white-space: nowrap;
 }
 
 .icon-swap {
     position: relative;
-    width: 40px;
-    height: 40px;
+    width: auto;
+    height: 60px;
 }
 
-.icon-swap svg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
+.icon-swap img {
+    width: auto;
     height: 100%;
     transition: opacity .25s;
 }
 
 .hover {
+    position: absolute;
+    inset: 0;
     opacity: 0;
 }
 
-.icon-swap:hover .normal {
+.technology:hover .icon-swap .normal {
     opacity: 0;
 }
 
-.icon-swap:hover .hover {
+.technology:hover .icon-swap .hover {
     opacity: 1;
 }
+
 
 /*SOFT_SKILLS*/
 .soft-skills-container {
@@ -362,7 +397,7 @@ h1, h2, h3, h4 {
 
 h2 {
     width: 100%;
-    margin: 50px;
+    margin: 50px 0;
     color: white;
     text-align: center;
     font-size: 22px;
