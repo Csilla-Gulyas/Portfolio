@@ -17,6 +17,7 @@ document.querySelectorAll("[data-svg]").forEach(async element => {
 });
 
 
+//load project cards dynamically
 let projectGroups = [
     {
         title: "PROJEKTMUNKÁIM",
@@ -263,5 +264,76 @@ externalContainers.forEach(container => {
 });
 
 
+//load technologies
+const technologies = [
+    { name: 'Bootstrap', iconName: 'bootstrap' },
+    { name: 'C Sharp', iconName: 'csharp' },
+    { name: 'CSS3', iconName: 'css3' },
+    { name: 'Dart', iconName: 'dart' },
+    { name: '.NET Core', iconName: 'dotnetcore' },
+    { name: 'Drupal', iconName: 'drupal' },
+    { name: 'Flutter', iconName: 'flutter' },
+    { name: 'GitHub', iconName: 'github' },
+    { name: 'HTML5', iconName: 'html5' },
+    { name: 'Inkscape', iconName: 'inkscape' },
+    { name: 'JavaScript', iconName: 'javascript' },
+    { name: 'jQuery', iconName: 'jquery' },
+    { name: 'MySQL', iconName: 'mysql' },
+    { name: 'PHP', iconName: 'php' },
+    { name: 'PostgreSQL', iconName: 'postgresql' },
+    { name: 'Sourcetree', iconName: 'sourcetree' },
+    { name: 'Visual Studio', iconName: 'visualstudio' },
+    { name: 'VSCode', iconName: 'vscode' }
+];
+
+generateTechnologies();
+
+function generateTechnologies() {
+    const container = document.getElementById('technologiesIconContainer');
+    container.innerHTML = '';
+
+    const group1 = document.createElement('div');
+    group1.classList.add('group');
+    container.appendChild(group1);
+
+    const group2 = document.createElement('div');
+    group2.classList.add('group');
+    group2.setAttribute('aria-hidden', 'true');
+    container.appendChild(group2);
+
+    technologies.forEach(technology =>{
+        const technologyElement = createTechnology(technology);
+        const technologyElementClone = technologyElement.cloneNode(true);
+
+        group1.appendChild(technologyElement);
+        group2.appendChild(technologyElementClone);
+    });
+}
+
+function createTechnology(technologyData) {
+    const technology = document.createElement('div');
+    technology.classList.add('technology');
+
+    const iconSwap = document.createElement('div');
+    iconSwap.classList.add('icon-swap');
+    technology.appendChild(iconSwap);
+
+    const normalImg = document.createElement('img');
+    normalImg.classList.add('normal');
+    normalImg.src = `images/technologies/plain/${technologyData.iconName}.svg`;
+    iconSwap.appendChild(normalImg);
+
+    const hoverImg = document.createElement('img');
+    hoverImg.classList.add('hover');
+    hoverImg.src = `images/technologies/original/${technologyData.iconName}.svg`;
+    iconSwap.appendChild(hoverImg);
+
+    const name = document.createElement('p');
+    name.classList.add('technology-text');
+    name.textContent = technologyData.name;
+    technology.appendChild(name);
+
+    return technology;
+}
 
 
