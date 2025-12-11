@@ -3,15 +3,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/header.css">
     <link rel="stylesheet" href="stylesheets/svg-animations.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
-    <title>Portfolio</title>
+    <title>Portfólió</title>
 </head>
 <body>
+<!-- Header -->
+<header>
+    <div class="logo-name-container">
+        <a href="/">
+            <img src="images/technologies/original/csharp.svg">
+        </a>
+        <div>
+            <h1>Gulyás Csilla</h1>
+            <h2>Portfólió</h2>
+        </div>
+    </div>
+    <div class="hamburger" id="hamburger">
+        <i class="fa fa-bars" onclick="mobilMenu()"></i>
+    </div>
+    <div class="hamburger-menu" id="hamburgerMenu">
+        <nav>
+            <ul>
+                <li><a href="/">Tanult technologiák</a></li>
+                <li><a href="/">Személyes kézségek</a></li>
+                <li><a href="/">Projektek</a></li>
+                <li><a href="/">Hobbik</a></li>
+            </ul>
+        </nav>
+    </div>
+    <nav class="nav-bar">
+        <ul>
+            <li><a class="nav-li active" href="#softSkills">Személyes kézségek</a></li>
+            <li><a class="nav-li" href="#projects">Projektek</a></li>
+            <li><a class="nav-li" href="#hobbies">Hobbik</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="scroll-top">
+    <button id="scrollBtn" class="scroll-btn"><i class="fa-solid fa-arrow-up"></i></button>
+</div>
+<div class="main-container">
     <div class="main-introduction-container">
         <div class="introduction-container">
             <div class="cv-photo-container-external">
@@ -23,11 +60,13 @@
                 <h2 class="welcome-text">
                     <span>Üdvözlöm,</span> Gulyás Csilla vagyok!
                 </h2>
-                <p>Jelenleg gyakornoki munkát keresek a szoftverfejlesztés területén, ahol továbbfejleszthetem tudásomat és valódi projektekben szerezhetek tapasztalatot.<br>A webfejlesztés mellett más IT-területek is érdekelnek, például az adatelemzés vagy a szoftvertesztelés, így szívesen bővíteném tapasztalataimat különböző szakmai irányokban is.<br>Amennyiben olyan gyakornokot keresnek, aki valóban szeret programozni és alig várja, hogy bizonyíthasson, akkor biztos vagyok benne, hogy értékes tagja lennék a csapatnak. A következő félévem már összefüggő szakmai gyakorlat, így akár teljes munkaidőben is helyt tudok állni.<br>Remélem, a portfóliómon keresztül sikerül átadnom a motiváltságomat és a lelkesedésemet.<br>Kellemes böngészést kívánok!</p>
+                <p>Jelenleg gyakornoki munkát keresek a szoftverfejlesztés területén, ahol továbbfejleszthetem tudásomat és valódi projektekben szerezhetek tapasztalatot. A webfejlesztés mellett más IT-területek is érdekelnek, például az adatelemzés vagy a szoftvertesztelés, így szívesen bővíteném tapasztalataimat különböző szakmai irányokban is. Amennyiben olyan gyakornokot keresnek, aki valóban szeret programozni és alig várja, hogy bizonyíthasson, akkor biztos vagyok benne, hogy értékes tagja lennék a csapatnak. A következő félévem már összefüggő szakmai gyakorlat, így akár teljes munkaidőben is állni, illetve hosszútávú munkalehetőséget keresek. Remélem, a portfóliómon keresztül sikerül átadnom a motiváltságomat és a lelkesedésemet.<br>Kellemes böngészést kívánok!</p>
                 <ul>
                     <li>
-                        <a href="mailto:csilla.gulyas.dev@gmail.com" class="mail-icon"><i class="fa-solid fa-envelope"></i></a>
-                        E-mail cím: 
+                        <a href="mailto:csilla.gulyas.dev@gmail.com" class="mail-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        E-mail cím:
                         <a href="mailto:csilla.gulyas.dev@gmail.com" class="mail">csilla.gulyas.dev@gmail.com</a>
                     </li>
                     <div class="github-container">
@@ -40,41 +79,40 @@
             </div>
         </div>
     </div>
-    <div class="technologies-container">
-        <h2>TANULT TECHNOLÓGIÁK</h2>
+    <div id="technologies" class="technologies-container" style="margin-top: 100px">
         <div id="technologiesIconContainer" class="technologies-icon-container"></div>
     </div>
-    <div class="soft-skills-container">
+    <div id="softSkills" class="soft-skills-container">
         <h2>SZEMÉLYES KÉSZSÉGEIM</h2>
         <div class="soft-skills-circles-container">
             <div class="soft-skill-container-external">
                 <div class="soft-skill-container">
                     <div class="flip-front">PROBLÉMAMEGOLDÓ<br>KÉSZSÉG</div>
                     <div class="flip-back">KUTATÁS</div>
-                </div> 
+                </div>
             </div>
             <div class="soft-skill-container-external">
                 <div class="soft-skill-container">
                     <div class="flip-front">IDŐMENEDZSMENT</div>
                     <div class="flip-back">MUNKA + TANULÁS</div>
-                </div> 
+                </div>
             </div>
             <div class="soft-skill-container-external">
                 <div class="soft-skill-container">
                     <div class="flip-front">KOMMUNIKÁCIÓS<br>KÉSZSÉG</div>
                     <div class="flip-back">CALL CENTER</div>
-                </div> 
+                </div>
             </div>
             <div class="soft-skill-container-external">
                 <div class="soft-skill-container">
                     <div class="flip-front">ALKALMAZKODÓ<br>KÉSZSÉG</div>
                     <div class="flip-back">SOKFÉLE<br>MUNKATAPASZTALAT</div>
-                </div> 
+                </div>
             </div>
         </div>
     </div>
     <!-- HOBBIES -->
-    <div class="projects-outside-container">
+    <div id="projects" class="projects-outside-container">
         <div class="octopus-container">
             <div data-svg="images/svgs/octopus.svg"></div>
         </div>
@@ -95,13 +133,13 @@
             </div>
         </div>
     </div>
-    <div class="hobbies-container">
+    <div id="hobbies" class="hobbies-container">
         <h2>HOBBIJAIM</h2>
         <div class="hobbies-circles-container">
             <div class="hobby-container-external">
                 <div class="hobby-container">
                     <div data-svg="images/svgs/cook.svg"></div>
-                </div> 
+                </div>
             </div>
             <div class="hobby-container-external">
                 <div class="hobby-container">
@@ -120,34 +158,36 @@
             </div>
         </div>
     </div>
-    <footer>
-  <div class="footer-container">
-    <ul class="footer-left">
-        <li><strong>Kapcsolat</strong></li>
-        <li>
-            <a href="mailto:csilla.gulyas.dev@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-            E-mail cím: 
-            <a href="mailto:csilla.gulyas.dev@gmail.com">csilla.gulyas.dev@gmail.com</a>
-        </li>
-    </ul>
-
-    <ul class="footer-right">
-        <div class="fav-icon-container">
+</div>
+<footer>
+    <div class="footer-container">
+        <ul class="footer-left">
+            <li><strong>Kapcsolat</strong></li>
             <li>
-                <a href="https://github.com/Csilla-Gulyas"><i class="fa-brands fa-github"></i></a>
-                <a href="https://github.com/Csilla-Gulyas" target="_blank">GitHub</a>
+                <a href="mailto:csilla.gulyas.dev@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                E-mail cím:
+                <a href="mailto:csilla.gulyas.dev@gmail.com">csilla.gulyas.dev@gmail.com</a>
             </li>
-        </div>
-        <div class="fav-icon-container">
-            <li><a href="/CV.pdf" download><i class="fa-solid fa-download"></i></a><a href="/CV.pdf" download>Letölthető önéletrajz</a></li>
-        </div>
-    </ul>
-  </div>
-  <div class="footer-bottom-container">
-    <div class="footer-bottom">
-        <p>Copyright © 2025 Gulyás Csilla.<br>Minden jog fenntartva.</p>
+        </ul>
+
+        <ul class="footer-right">
+            <div class="fav-icon-container">
+                <li>
+                    <a href="https://github.com/Csilla-Gulyas"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://github.com/Csilla-Gulyas" target="_blank">GitHub</a>
+                </li>
+            </div>
+            <div class="fav-icon-container">
+                <li><a href="/CV.pdf" download><i class="fa-solid fa-download"></i></a><a href="/CV.pdf" download>Letölthető
+                    önéletrajz</a></li>
+            </div>
+        </ul>
     </div>
-  </div>
+    <div class="footer-bottom-container">
+        <div class="footer-bottom">
+            <p>Copyright © 2025 Gulyás Csilla.<br>Minden jog fenntartva.</p>
+        </div>
+    </div>
 </footer>
 </body>
 </html>
