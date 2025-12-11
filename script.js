@@ -337,3 +337,44 @@ function createTechnology(technologyData) {
 }
 
 
+// Hamburger menu
+let isMenuShown = false;
+const hamburgerMenu = document.getElementById("hamburgerMenu");
+
+function mobilMenu() {
+
+    if(!isMenuShown) {
+        hamburgerMenu.classList.add("shown");
+    } else {
+        hamburgerMenu.classList.remove("shown");
+    }
+    isMenuShown = !isMenuShown;
+}
+
+
+// Scroll To Top Button
+const scrollBtn = document.getElementById('scrollBtn');
+
+window.addEventListener('scroll', function() {
+    scrollFunction();
+})
+
+scrollBtn.addEventListener('click', function() {
+    topFunction();
+})
+
+function scrollFunction() {
+    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+        scrollBtn.style.display = "flex";
+    } else {
+        scrollBtn.style.display = "none";
+    }
+}
+
+function topFunction() {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    })
+}

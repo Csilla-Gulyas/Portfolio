@@ -1,0 +1,207 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: nunito, sans-serif;
+}
+
+/* Header */
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    background-color: #f64778;
+    color: white;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+}
+
+.logo-name-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-name-container h1 {
+    font-size: 32px;
+}
+
+.logo-name-container h2{
+    font-size: 16px;
+    margin: 0;
+}
+
+.logo-name-container img{
+    height: 100px;
+    width: 100px;
+}
+
+/* Navigation */
+nav{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 20px;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    padding: 0;
+}
+
+nav li a{
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 60px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav li a.nav-li:hover{
+    background-color: #1c2841;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Hamburger */
+.hamburger {
+    display: none;
+}
+
+.hamburger:hover i {
+    color: #1c2841;
+    cursor: pointer;
+}
+
+.hamburger-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f64778;
+    width: 100%;
+    padding: 30px 10px;
+    text-align: left;
+}
+
+.hamburger-menu.shown {
+    display: none;
+}
+
+.hamburger-menu li {
+    font-size: 14px;
+}
+
+/* Scroll To Top Button */
+.scroll-top {
+    position: fixed;
+    z-index: 10;
+    bottom: 80px;
+    right: 20px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.scroll-btn {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 13px;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    background-color: #f64778;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, color 0.3s;
+}
+
+.scroll-btn:hover {
+    transform: scale(1.1);
+    background-color: #fff;
+    color: #1c2841;
+}
+
+.scroll-btn i {
+    font-size: 25px;
+    color: #1c2841;
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+    .logo-name-container svg {
+        width: 50px;
+        height: 50px;
+    }
+
+    .logo-name-container h1 {
+        font-size: 24px;
+    }
+
+    .logo-name-container h2 {
+        font-size: 14px;
+    }
+
+    header {
+        padding: 15px 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        padding: 8px 12px;
+    }
+
+    .logo-name-container svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo-name-container h1 {
+        font-size: 20px;
+    }
+
+    .logo-name-container h2 {
+        font-size: 12px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger-menu.shown {
+        display: block;
+    }
+
+    .hamburger i {
+        color: white;
+        font-size: 25px;
+    }
+
+    .nav-bar {
+        display: none;
+    }
+
+
+    nav ul{
+        flex-direction: column;
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: 650px) {
+    .scroll-top {
+        margin-right: 10px;
+    }
+}
