@@ -11,13 +11,15 @@
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
     <title>Portfólió</title>
+    <link rel="icon" href="images/svgs/logo-red.svg" type="svg" fill="#f64778">
 </head>
 <body>
 <!-- Header -->
 <header>
     <div class="logo-name-container">
         <a href="/">
-            <img src="images/technologies/original/csharp.svg">
+            <!-- <img src="images/svgs/logo.svg"> -->
+            <div data-svg="images/svgs/logo.svg"></div>
         </a>
         <div>
             <h1>Gulyás Csilla</h1>
@@ -31,7 +33,7 @@
         <nav>
             <ul>
                 <li><a href="/">Tanult technologiák</a></li>
-                <li><a href="/">Személyes kézségek</a></li>
+                <li><a href="/">Személyes készségek</a></li>
                 <li><a href="/">Projektek</a></li>
                 <li><a href="/">Hobbik</a></li>
             </ul>
@@ -39,7 +41,7 @@
     </div>
     <nav class="nav-bar">
         <ul>
-            <li><a class="nav-li active" href="#softSkills">Személyes kézségek</a></li>
+            <li><a class="nav-li active" href="#softSkills">Személyes készségek</a></li>
             <li><a class="nav-li" href="#projects">Projektek</a></li>
             <li><a class="nav-li" href="#hobbies">Hobbik</a></li>
         </ul>
@@ -60,14 +62,15 @@
                 <h2 class="welcome-text">
                     <span>Üdvözlöm,</span> Gulyás Csilla vagyok!
                 </h2>
-                <p>Jelenleg gyakornoki munkát keresek a szoftverfejlesztés területén, ahol továbbfejleszthetem tudásomat és valódi projektekben szerezhetek tapasztalatot. A webfejlesztés mellett más IT-területek is érdekelnek, például az adatelemzés vagy a szoftvertesztelés, így szívesen bővíteném tapasztalataimat különböző szakmai irányokban is. Amennyiben olyan gyakornokot keresnek, aki valóban szeret programozni és alig várja, hogy bizonyíthasson, akkor biztos vagyok benne, hogy értékes tagja lennék a csapatnak. A következő félévem már összefüggő szakmai gyakorlat, így akár teljes munkaidőben is állni, illetve hosszútávú munkalehetőséget keresek. Remélem, a portfóliómon keresztül sikerül átadnom a motiváltságomat és a lelkesedésemet.<br>Kellemes böngészést kívánok!</p>
+                <p>Jelenleg gyakornoki munkát keresek a szoftverfejlesztés területén, ahol továbbfejleszthetem tudásomat és valódi projektekben szerezhetek tapasztalatot. A webfejlesztés mellett más IT-területek is érdekelnek, például az adatelemzés vagy a szoftvertesztelés, így szívesen bővíteném tapasztalataimat különböző szakmai irányokban is. Amennyiben olyan gyakornokot keresnek, aki valóban szeret programozni és alig várja, hogy bizonyíthasson, akkor biztos vagyok benne, hogy értékes tagja lennék a csapatnak. A következő félévem már összefüggő szakmai gyakorlat, így teljes munkaidőben szeretnék helytállni, illetve megjegyezném azt is, hogy hosszútávú munkalehetőséget keresek. Remélem, a portfóliómon keresztül sikerül átadnom a motiváltságomat és a lelkesedésemet.<br>Kellemes böngészést kívánok!</p>
                 <ul>
-                    <li>
+                    <li class="email">
                         <a href="mailto:csilla.gulyas.dev@gmail.com" class="mail-icon">
                             <i class="fa-solid fa-envelope"></i>
                         </a>
                         E-mail cím:
                         <a href="mailto:csilla.gulyas.dev@gmail.com" class="mail">csilla.gulyas.dev@gmail.com</a>
+                        <i class="fa-solid fa-clone copy-btn" onclick="copy('csilla.gulyas.dev@gmail.com')"></i>
                     </li>
                     <div class="github-container">
                         <li>
@@ -167,6 +170,7 @@
                 <a href="mailto:csilla.gulyas.dev@gmail.com"><i class="fa-solid fa-envelope"></i></a>
                 E-mail cím:
                 <a href="mailto:csilla.gulyas.dev@gmail.com">csilla.gulyas.dev@gmail.com</a>
+                <i class="fa-solid fa-clone copy-btn" onclick="copy('csilla.gulyas.dev@gmail.com')"></i>
             </li>
         </ul>
 

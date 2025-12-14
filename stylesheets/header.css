@@ -26,7 +26,7 @@ header{
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 15px;
+    gap: 8px;
 }
 
 .logo-name-container h1 {

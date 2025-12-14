@@ -110,6 +110,16 @@ h1, h2, h3, h4 {
     color: white;
 }
 
+.email i {
+    transition: transform .5s linear;
+}
+
+.email i:hover {
+    cursor: pointer;
+    color: white;
+    transform: scale(1.2);
+}
+
 @media (max-width: 1200px) {
     .introduction-container {
         flex-direction: column;
@@ -587,6 +597,16 @@ footer {
 
 .footer-left a:hover {
     color: white;
+}
+
+.footer-left i {
+    transition: transform .5s linear;
+}
+
+.footer-left i:hover {
+    cursor: pointer;
+    color: white;
+    transform: scale(1.2);
 }
 
 .fav-icon-container:hover a {
