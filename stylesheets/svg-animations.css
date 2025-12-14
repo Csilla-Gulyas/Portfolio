@@ -147,7 +147,7 @@
 
 
 /*octopus*/
-#octopus, #bubbles {
+#octopus {
     animation: float 6s ease-in-out infinite;
 }
 
@@ -213,18 +213,123 @@
 
 #bubble1, #bubble2, #bubble3 {
     transform-origin: center center;
-    animation: float-tentacles 6s ease-in-out infinite;
+    animation: float-bubbles 8s ease-in-out infinite;
 }
 
-@keyframes float-tentacles {
+@keyframes float-bubbles {
     0%, 100% {
-        transform: scaleY(1) scaleZ(1) scaleX(1);
+        transform: scaleY(1.005) scaleZ(1.005) scaleX(1.005);
+        transform: translateX(6px) translateY(8px) translateZ(12px);
     }
     50% {
         transform: scaleY(0.98) rotate(-0.5deg);
+        transform: translateX(0px) translateY(0px) translateZ(0px);
     }
 }
 
-#bubble1 { animation-delay: 0s; }
-#bubble2 { animation-delay: 1s; }
-#bubble3 { animation-delay: 0.5s; }
+#bubble1 { animation-delay: 1s; }
+#bubble2 { animation-delay: 3s; }
+#bubble3 { animation-delay: 5s; }
+
+/* logo */
+#logo-g,
+#logo-c,
+#logo-s,
+#logo-outer-circle,
+#logo-inner-circle {
+    opacity: 0;
+    color: white;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+#logo-g {
+    animation: dropBounce 1.2s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+@keyframes dropBounce {
+    0% {
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+    60% {
+        transform: translateY(5px);
+        opacity: 1;
+    }
+    80% {
+        transform: translateY(-3px);
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#logo-c {
+    animation: slideInRight 1s ease-out forwards;
+    animation-delay: 1.3s;
+}
+
+#logo-s {
+    animation: slideInRight 1s ease-out forwards;
+    animation-delay: 1.6s;
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(40px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+#logo-outer-circle {
+    animation:
+        scaleCircle 1.5s ease forwards,
+        pulse 2.5s ease-in-out infinite;
+    animation-delay: 2.4s, 4s;
+}
+
+@keyframes scaleCircle {
+    0% {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.04);
+        opacity: 0.8;
+    }
+}
+
+#logo-inner-circle {
+    /* stroke-dasharray: 110;
+    stroke-dashoffset: 110; */
+    /* animation: drawInnerCircle 1.2s ease forwards; */
+    animation: scaleCircle 1.5s ease forwards;
+    animation-delay: 4.6s;
+}
+
+/* @keyframes drawInnerCircle {
+    from {
+        stroke-dashoffset: 110;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+} */
+

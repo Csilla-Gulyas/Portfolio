@@ -106,7 +106,7 @@ let projectGroups = [
         ],
     },
     {
-        title: "JELENLEG FUTÓ PROJEKTMUNKÁIM",
+        title: "LEGFRISSEBB PROJEKTMUNKÁIM",
         projectCards: [
             {
                 title: "Barbie webshop",
@@ -237,7 +237,7 @@ const skillContainers = document.querySelectorAll('.soft-skill-container');
 const externalContainers = document.querySelectorAll('.soft-skill-container-external');
 
 let paused = false;
-//ms
+
 const readTime = 6000;
 
 function flipAll() {
@@ -247,22 +247,28 @@ function flipAll() {
     setTimeout(flipAll, readTime);
 }
 
-// start
+//start
 setTimeout(flipAll, readTime);
 
-// Desktop: hover = pause
+//desktop: hover = pause
 externalContainers.forEach(container => {
     container.addEventListener('mouseenter', () => paused = true);
     container.addEventListener('mouseleave', () => paused = false);
 });
 
-// Mobil: tap = pause
+//mobil: tap = pause
 externalContainers.forEach(container => {
     container.addEventListener('touchstart', () => {
         paused = !paused;
     });
 });
 
+skillContainers.forEach(container => {
+    container.addEventListener('click', (e) => {
+        e.stopPropagation();
+        container.classList.toggle('flipped');
+    });
+});
 
 //load technologies
 const technologies = [
@@ -377,4 +383,9 @@ function topFunction() {
         left: 0,
         behavior: 'smooth'
     })
+}
+
+// Copy button
+function copy(text) {
+  navigator.clipboard.writeText(text);
 }
