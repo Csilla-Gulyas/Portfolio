@@ -33,11 +33,11 @@ let projectGroups = [
                 },
                 projectImageContainer: {
                     imageLeft: {
-                        src: "images/pigeon_food.png",
+                        src: "pigeon_food.png",
                         alt: "Pigeon Food étterem weblapjának menüjéről készült kép"
                     },
                     imageRight: {
-                        src: "images/pigeon_food_2.png",
+                        src: "pigeon_food_2.png",
                         alt: "Pigeon Food étterem weblapjának bejelentkezése oldalának CSS-éről készült kép."
                     }
                 },
@@ -61,11 +61,11 @@ let projectGroups = [
                 },
                 projectImageContainer: {
                     imageLeft: {
-                        src: "images/webshop_database.png",
+                        src: "webshop_database.png",
                         alt: "A webshop adatbázis lekérdezéseiről készített képernyőkép."
                     },
                     imageRight: {
-                        src: "images/webshop_database_2.png",
+                        src: "webshop_database_2.png",
                         alt: "A webshop adatbázis EK diagramja."
                     }
                 },
@@ -88,11 +88,11 @@ let projectGroups = [
                 },
                 projectImageContainer: {
                     imageLeft: {
-                        src: "images/minesweeper.png",
+                        src: "minesweeper.png",
                         alt: "Az aknakereső kezdő képernyője látható a képen (kezdő pálya)."
                     },
                     imageRight: {
-                        src: "images/minesweeper_2.png",
+                        src: "minesweeper_2.png",
                         alt: "A pálya generáláshoz írt elágazásom kódja szerepel a képernyőképen."
                     }
                 },
@@ -119,11 +119,11 @@ let projectGroups = [
                 },
                 projectImageContainer: {
                     imageLeft: {
-                        src: "images/barbie_webshop.png",
+                        src: "barbie_webshop.png",
                         alt: "A Barbie webshop backendjének kód részlete és mappaszerkezete látható képernyőképként."
                     },
                     imageRight: {
-                        src: "images/barbie_webshop_2.png",
+                        src: "barbie_webshop_2.png",
                         alt: "A Barbie webshop szerkezete látható diagram formájában."
                     }
                 },
@@ -147,11 +147,11 @@ let projectGroups = [
                 },
                 projectImageContainer: {
                     imageLeft: {
-                        src: "images/pet_adoption_website.png",
+                        src: "pet_adoption_website.png",
                         alt: "A webshop adatbázis lekérdezéseiről készített képernyőkép."
                     },
                     imageRight: {
-                        src: "images/pet_adoption_website_2.png",
+                        src: "pet_adoption_website_2.png",
                         alt: "A webshop adatbázis EK diagramja."
                     }
                 },
@@ -183,13 +183,13 @@ function generateCard(cardData, template) {
 
     const projectImageContainer = card.querySelector(".project-image-container");
     const img1 = document.createElement("img");
-    img1.src = cardData.projectImageContainer.imageLeft.src;
+    img1.src = "images/projects/" + cardData.projectImageContainer.imageLeft.src;
     img1.alt = cardData.projectImageContainer.imageLeft.alt;
     img1.classList.add("img1");
     projectImageContainer.appendChild(img1);
 
     const img2 = document.createElement("img");
-    img2.src = cardData.projectImageContainer.imageRight.src;
+    img2.src = "images/projects/" + cardData.projectImageContainer.imageRight.src;
     img2.alt = cardData.projectImageContainer.imageRight.alt;
     img2.classList.add("img2");
     projectImageContainer.appendChild(img2);
@@ -207,27 +207,81 @@ function generateCard(cardData, template) {
     return card;
 }
 
+function generateCardMobile(cardData, template) {
+    const card = template.cloneNode(true);
+    card.removeAttribute("id");
+
+    const cardFront = card.querySelector('.card-front');
+    const cardBack = card.querySelector('.card-back');
+
+    const textContainerBack = cardBack.querySelector(".project-text-container-mobile");
+    cardData.projectTextContainerLeft.texts.forEach(text =>{
+        const p = document.createElement("p");
+        p.innerHTML = text;
+        p.classList.add("project-text-mobile");
+        textContainerBack.appendChild(p);
+    })
+
+    const projectImageContainerFront = cardFront.querySelector(".project-image-container-mobile");
+    const img1 = document.createElement("img");
+    img1.src = "images/projects/" + cardData.projectImageContainer.imageLeft.src;
+    img1.alt = cardData.projectImageContainer.imageLeft.alt;
+    img1.classList.add("img1");
+    projectImageContainerFront.appendChild(img1);
+
+    const projectImageContainerBack = cardBack.querySelector(".project-image-container-mobile");
+    const img2 = document.createElement("img");
+    img2.src = "images/projects/" + cardData.projectImageContainer.imageRight.src;
+    img2.alt = cardData.projectImageContainer.imageRight.alt;
+    img2.classList.add("img2");
+    projectImageContainerBack.appendChild(img2);
+
+    const projectTextContainerDescription = cardFront.querySelector(".project-text-container-mobile p");
+    projectTextContainerDescription.innerHTML = cardData.projectTextContainerRight.description;
+
+    const projectTextContainerList = cardFront.querySelector(".project-text-container-mobile ul");
+    cardData.projectTextContainerRight.technologies.forEach(technology =>{
+        const li = document.createElement("li");
+        li.textContent = technology;
+        projectTextContainerList.appendChild(li);
+    })
+
+    return card;
+}
+
 generateCards();
 
 function generateCards() {
     const projectsContainer = document.getElementById("projectsContainer");
+    const projectsContainerMobile = document.getElementById("projectsContainerMobile");
     const projectCard = document.getElementById("projectContainer");
+    const projectCardMobile = document.getElementById("projectContainerMobile");
 
     projectsContainer.innerHTML= "";
-    console.log(projectGroups);
-    
+    projectsContainerMobile.innerHTML= "";
 
     projectGroups.forEach(projectGroup => {
         const h2 = document.createElement("h2");
         h2.textContent = projectGroup.title;
         projectsContainer.appendChild(h2);
 
+        const h2Mobile = h2.cloneNode(true);
+        projectsContainerMobile.appendChild(h2Mobile);
+
         projectGroup.projectCards.forEach(card => {
             const h3 = document.createElement("h3");
             h3.textContent = card.title;
             projectsContainer.appendChild(h3);
+
+            const h3Mobile = h3.cloneNode(true);
+            projectsContainerMobile.appendChild(h3Mobile);
+
             let cardElement = generateCard(card, projectCard);
             projectsContainer.appendChild(cardElement)
+
+            let cardElementMobile = generateCardMobile(card, projectCardMobile);
+            projectsContainerMobile.appendChild(cardElementMobile)
+
         })
     })
 }
@@ -384,6 +438,27 @@ function topFunction() {
         behavior: 'smooth'
     })
 }
+
+// Flip Animation
+document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".project-card-mobile");
+
+    cards.forEach(card => {
+        card.addEventListener("click", () => {
+            card.classList.add("flipped");
+
+            card.addEventListener("mouseenter", () => {
+                clearTimeout(timeoutId);
+            });
+
+            card.addEventListener("mouseleave", () => {
+                timeoutId = setTimeout(() => {
+                    card.classList.remove("flipped");
+                }, 5000);
+            });
+        });
+    });
+});
 
 // Copy button
 function copy(text) {
