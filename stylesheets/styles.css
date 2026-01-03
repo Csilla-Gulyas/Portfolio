@@ -22,7 +22,6 @@ h1, h2, h3, h4 {
 /*Introduction*/
 .main-container {
     width: 100%;
-    max-width: 1440px;
 
     display: flex;
     flex-direction: column;
@@ -30,7 +29,13 @@ h1, h2, h3, h4 {
     justify-content: center;
 }
 
+.main-container .contained {
+    width: 100%;
+    max-width: 1400px;
+}
+
 .main-introduction-container {
+    width: 100%;
     margin: 100px 0 0 0;
     display: flex;
     justify-content: center;
@@ -337,6 +342,7 @@ h1, h2, h3, h4 {
 }
 
 .projects-outside-container {
+    container-type: inline-size;
     position: relative;
     width: 100%;
     display: flex;
@@ -345,7 +351,7 @@ h1, h2, h3, h4 {
 }
 
 .projects-container {
-    width: 66vw;
+    width: 66cqw;
     height: auto;
     padding: 0;
     display: flex;
@@ -358,7 +364,7 @@ h1, h2, h3, h4 {
     container-type: inline-size;
     position: relative;
     width: 100%;
-    height: 20vw;
+    height: 20cqw;
     margin: 40px 0;
     border: 5px solid #f64778;
     border-radius: 30px;
@@ -560,6 +566,22 @@ img {
 
 br {
     line-height: 1.6cqw;
+}
+
+@media (max-width: 1100px) {
+    .main-container .contained {
+        max-width: 740px;
+    }
+
+    .introduction-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 800px) {
+    .main-container .contained {
+        max-width: 400px;
+    }
 }
 
 @media (max-width: 768px) {
