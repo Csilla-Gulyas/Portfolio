@@ -417,6 +417,7 @@ const scrollBtn = document.getElementById('scrollBtn');
 
 window.addEventListener('scroll', function() {
     scrollFunction();
+    watchScrollBtnDistance();
 })
 
 scrollBtn.addEventListener('click', function() {
@@ -437,6 +438,23 @@ function topFunction() {
         left: 0,
         behavior: 'smooth'
     })
+}
+
+// Scroll button position fix above footer
+const footer = document.getElementById('footer');
+const scrollTop = document.getElementById('scrollTop');
+
+function watchScrollBtnDistance() {
+    const footerTop = footer.getBoundingClientRect().top;
+    const scrollBtnBottom = scrollBtn.getBoundingClientRect().bottom;
+
+    const distance = footerTop - scrollBtnBottom;
+
+    if (distance < 80 && scrollTop.style.position !== 'absolute') {
+        scrollTop.style.position = 'absolute';
+    } else if (window.innerHeight - scrollBtnBottom < 80 && scrollTop.style.position !== 'fixed') {
+        scrollTop.style.position = 'fixed';
+    }
 }
 
 // Flip Animation
