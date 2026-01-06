@@ -200,8 +200,9 @@ nav li a.nav-li:hover{
 }
 
 /* Responsive */
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 768px) {
     .scroll-top {
-        margin-right: 10px;
+        margin-right: 0;
+        right: 12px;
     }
 }

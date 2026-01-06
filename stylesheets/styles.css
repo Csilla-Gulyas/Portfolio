@@ -346,6 +346,7 @@ h1, h2, h3, h4 {
     container-type: inline-size;
     position: relative;
     width: 100%;
+    max-width: 1400px;
     display: flex;
     justify-content: center;
     overflow: hidden;
