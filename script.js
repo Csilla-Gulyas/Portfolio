@@ -7,15 +7,6 @@
 //     });
 // });
 
-// SVG markup betöltése és inline beszúrása, hogy CSS-sel animálható legyen
-document.querySelectorAll("[data-svg]").forEach(async element => {
-    const svgUrl    = element.dataset.svg;
-    const response  = await fetch(svgUrl);
-    const svgMarkup = await response.text();
-
-    element.innerHTML = svgMarkup;
-});
-
 
 //load project cards dynamically
 let projectGroups = [
@@ -47,6 +38,10 @@ let projectGroups = [
                         "HTML5, CSS3, JavaScript (Vanilla)",
                         "Bootstrap 5 (néhány elemhez)"
                     ]
+                },
+                octopus: {
+                    show: true,
+                    isRight: true
                 }
             },
 
@@ -74,6 +69,10 @@ let projectGroups = [
                     technologies: [
                         "MySQL"
                     ]
+                },
+                octopus: {
+                    show: false,
+                    isRight: true
                 }
             },
 
@@ -101,6 +100,10 @@ let projectGroups = [
                     technologies: [
                         "HTML5, CSS3, JavaScript (Vanilla)"
                     ]
+                },
+                octopus: {
+                    show: true,
+                    isRight: false
                 }
             }
         ],
@@ -134,6 +137,10 @@ let projectGroups = [
                         "HTML5, CSS3, JavaScript (Vanilla)",
                         "Xunit"
                     ]
+                },
+                octopus: {
+                    show: false,
+                    isRight: true
                 }
             },
             {
@@ -161,6 +168,10 @@ let projectGroups = [
                         "MySQL, PHP",
                         "HTML5, CSS3, JavaScript (Vanilla)"
                     ]
+                },
+                octopus: {
+                    show: true,
+                    isRight: true
                 }
             }
         ],
@@ -204,6 +215,16 @@ function generateCard(cardData, template) {
         projectTextContainerRightList.appendChild(li);
     })
 
+    const octopusContainer = card.querySelector(".octopus-container");
+
+    if (cardData.octopus.show) {
+        octopusContainer.classList.add('display');
+    }
+
+    if (!cardData.octopus.isRight) {
+        octopusContainer.classList.add('left');
+    }
+
     return card;
 }
 
@@ -245,6 +266,12 @@ function generateCardMobile(cardData, template) {
         li.textContent = technology;
         projectTextContainerList.appendChild(li);
     })
+
+    const octopusContainer = card.querySelector(".octopus-container-mobile");
+
+    if (cardData.octopus.show) {
+        octopusContainer.classList.add('display');
+    }
 
     return card;
 }
@@ -482,3 +509,12 @@ document.addEventListener("DOMContentLoaded", () => {
 function copy(text) {
   navigator.clipboard.writeText(text);
 }
+
+// SVG markup betöltése és inline beszúrása, hogy CSS-sel animálható legyen
+document.querySelectorAll("[data-svg]").forEach(async element => {
+    const svgUrl    = element.dataset.svg;
+    const response  = await fetch(svgUrl);
+    const svgMarkup = await response.text();
+
+    element.innerHTML = svgMarkup;
+});
