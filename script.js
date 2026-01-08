@@ -42,7 +42,8 @@ let projectGroups = [
                 octopus: {
                     show: true,
                     isRight: true
-                }
+                },
+                githubUrl: 'https://github.com/Csilla-Gulyas/Pigeon_Food'
             },
 
             {
@@ -73,7 +74,8 @@ let projectGroups = [
                 octopus: {
                     show: false,
                     isRight: true
-                }
+                },
+                githubUrl: 'https://github.com/Csilla-Gulyas/Webshop_Database'
             },
 
             {
@@ -104,7 +106,8 @@ let projectGroups = [
                 octopus: {
                     show: true,
                     isRight: false
-                }
+                },
+                githubUrl: 'https://github.com/Csilla-Gulyas/Minesweeper'
             }
         ],
     },
@@ -141,7 +144,8 @@ let projectGroups = [
                 octopus: {
                     show: false,
                     isRight: true
-                }
+                },
+                githubUrl: 'https://github.com/GaborHeger/rendszerfejlesztes2025_c/tree/backend'
             },
             {
                 title: "Kisállat örökbefogadó oldal",
@@ -172,7 +176,8 @@ let projectGroups = [
                 octopus: {
                     show: true,
                     isRight: true
-                }
+                },
+                githubUrl: 'https://github.com/Csilla-Gulyas/Animal_Adoption_Site'
             }
         ],
     }
@@ -181,6 +186,10 @@ let projectGroups = [
 function generateCard(cardData, template) {
     const card = template.cloneNode(true);
     card.removeAttribute("id");
+
+    card.addEventListener('click', () => {
+        window.open(cardData.githubUrl)
+    });
 
     const projectTextContainerLeft = card.querySelector(".project-text-container-left");
     cardData.projectTextContainerLeft.texts.forEach(text =>{
@@ -426,16 +435,48 @@ function createTechnology(technologyData) {
 
 // Hamburger menu
 let isMenuShown = false;
+const hamburger = document.getElementById("hamburger");
 const hamburgerMenu = document.getElementById("hamburgerMenu");
 
-function mobilMenu() {
+hamburger.addEventListener("click", mobilMenu);
+
+hamburgerLinks = hamburgerMenu.querySelectorAll('a');
+hamburgerLinks.forEach(hamburgerLink => {
+   hamburgerLink.addEventListener('click', mobilMenu);
+});
+
+function mobilMenu(event) {
+    event?.stopPropagation();
 
     if(!isMenuShown) {
         hamburgerMenu.classList.add("shown");
+        listenForOutsideClick();
     } else {
         hamburgerMenu.classList.remove("shown");
     }
     isMenuShown = !isMenuShown;
+}
+
+function listenForOutsideClick() {
+    document.addEventListener('click', checkForOutsideClick);
+}
+
+function checkForOutsideClick(event) {
+    if (!hamburgerMenu.contains(event.target)) {
+        mobilMenu();
+        document.removeEventListener('click', checkForOutsideClick);
+    }
+}
+
+
+// Smooth scroll to section
+function smoothScrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+
+    section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    })
 }
 
 

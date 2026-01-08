@@ -78,15 +78,17 @@ nav li a.nav-li:hover{
     display: none;
 }
 
-.hamburger:hover i {
-    color: #1c2841;
-    cursor: pointer;
+@media (hover: hover) {
+    .hamburger:hover i {
+        color: #1c2841;
+        cursor: pointer;
+    }
 }
 
 .hamburger-menu {
     display: none;
     position: absolute;
-    top: 100%;
+    top: 95%;
     left: 0;
     background-color: #f64778;
     width: 100%;
@@ -127,10 +129,12 @@ nav li a.nav-li:hover{
     transition: transform 0.3s, color 0.3s;
 }
 
-.scroll-btn:hover {
-    transform: scale(1.1);
-    background-color: #fff;
-    color: #1c2841;
+@media (hover: hover) {
+    .scroll-btn:hover {
+        transform: scale(1.1);
+        background-color: #fff;
+        color: #1c2841;
+    }
 }
 
 .scroll-btn i {

@@ -17,8 +17,7 @@
 <!-- Header -->
 <header>
     <div class="logo-name-container">
-        <a href="/">
-            <!-- <img src="images/svgs/logo.svg"> -->
+        <a href="./">
             <div data-svg="images/svgs/logo.svg"></div>
         </a>
         <div>
@@ -27,21 +26,20 @@
         </div>
     </div>
     <div class="hamburger" id="hamburger">
-        <i class="fa fa-bars" onclick="mobilMenu()"></i>
+        <i class="fa fa-bars"></i>
     </div>
     <div class="hamburger-menu" id="hamburgerMenu">
         <nav>
             <ul>
-                <li><a href="/">Tanult technologiák</a></li>
-                <li><a href="/">Személyes készségek</a></li>
-                <li><a href="/">Projektek</a></li>
-                <li><a href="/">Hobbik</a></li>
+                <li><a onclick="smoothScrollToSection('softSkills')">Készségeim</a></li>
+                <li><a onclick="smoothScrollToSection('projects')">Projektek</a></li>
+                <li><a onclick="smoothScrollToSection('hobbies')">Hobbik</a></li>
             </ul>
         </nav>
     </div>
     <nav class="nav-bar">
         <ul>
-            <li><a class="nav-li active" href="#softSkills">Személyes készségek</a></li>
+            <li><a class="nav-li active" href="#softSkills">Készségeim</a></li>
             <li><a class="nav-li" href="#projects">Projektek</a></li>
             <li><a class="nav-li" href="#hobbies">Hobbik</a></li>
         </ul>
@@ -86,7 +84,7 @@
         <div id="technologiesIconContainer" class="technologies-icon-container"></div>
     </div>
     <div id="softSkills" class="soft-skills-container contained">
-        <h2>SZEMÉLYES KÉSZSÉGEIM</h2>
+        <h2>KÉSZSÉGEIM</h2>
         <div class="soft-skills-circles-container">
             <div class="soft-skill-container-external">
                 <div class="soft-skill-container">

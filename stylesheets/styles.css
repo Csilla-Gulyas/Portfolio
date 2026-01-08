@@ -143,6 +143,16 @@ h1, h2, h3, h4 {
         white-space: pre;
     }
 }
+@media (max-width: 768px) {
+    .main-introduction-container {
+        margin-top: 32px;
+        padding: 0 16px;
+    }
+
+    .introduction-text-container p {
+        text-align: justify;
+    }
+}
 
 /*Technologies*/
 .technologies-container {
@@ -158,8 +168,10 @@ h1, h2, h3, h4 {
     overflow: hidden;
     display: flex;
     gap: 0;
+}
 
-    &:hover .group {
+@media (hover: hover) {
+    .technologies-icon-container:hover .group {
         animation-play-state: paused;
     }
 }
@@ -168,7 +180,7 @@ h1, h2, h3, h4 {
     display: flex;
     gap: 60px;
     will-change: transform;
-    animation: horizontal-scrolling 20s linear infinite;
+    animation: horizontal-scrolling 40s linear infinite;
     padding: 0 30px;
 }
 
@@ -258,6 +270,7 @@ h1, h2, h3, h4 {
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.8s;
+    cursor: pointer;
 }
 
 .flip-front, .flip-back {
