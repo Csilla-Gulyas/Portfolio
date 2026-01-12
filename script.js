@@ -184,7 +184,10 @@ let projectGroups = [
 ]
 
 function generateCard(cardData, template) {
-    const card = template.cloneNode(true);
+    const cardOutside = template.cloneNode(true);
+    cardOutside.removeAttribute("id");
+
+    const card = cardOutside.querySelector("#projectContainer")
     card.removeAttribute("id");
 
     card.addEventListener('click', () => {
@@ -224,9 +227,11 @@ function generateCard(cardData, template) {
         projectTextContainerRightList.appendChild(li);
     })
 
+    const outsideOctopusContainer = cardOutside.querySelector(".octopus-container-mobile");
     const octopusContainer = card.querySelector(".octopus-container");
 
     if (cardData.octopus.show) {
+        outsideOctopusContainer.classList.add('display');
         octopusContainer.classList.add('display');
     }
 
@@ -234,7 +239,7 @@ function generateCard(cardData, template) {
         octopusContainer.classList.add('left');
     }
 
-    return card;
+    return cardOutside;
 }
 
 function generateCardMobile(cardData, template) {
@@ -290,7 +295,7 @@ generateCards();
 function generateCards() {
     const projectsContainer = document.getElementById("projectsContainer");
     const projectsContainerMobile = document.getElementById("projectsContainerMobile");
-    const projectCard = document.getElementById("projectContainer");
+    const projectCard = document.getElementById("projectOutsideContainer");
     const projectCardMobile = document.getElementById("projectContainerMobile");
 
     projectsContainer.innerHTML= "";

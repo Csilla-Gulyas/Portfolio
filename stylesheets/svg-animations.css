@@ -214,16 +214,15 @@
 #bubble1, #bubble2, #bubble3 {
     transform-origin: center center;
     animation: float-bubbles 8s ease-in-out infinite;
+    transform: scaleY(1.005) scaleZ(1.005) scaleX(1.005) translateX(6px) translateY(8px) translateZ(12px);
 }
 
 @keyframes float-bubbles {
     0%, 100% {
-        transform: scaleY(1.005) scaleZ(1.005) scaleX(1.005);
-        transform: translateX(6px) translateY(8px) translateZ(12px);
+        transform: scaleY(1.005) scaleZ(1.005) scaleX(1.005) translateX(6px) translateY(8px) translateZ(12px);
     }
     50% {
-        transform: scaleY(0.98) rotate(-0.5deg);
-        transform: translateX(0px) translateY(0px) translateZ(0px);
+        transform: scaleY(0.98) rotate(-0.5deg) translateX(0px) translateY(0px) translateZ(0px);
     }
 }
 
