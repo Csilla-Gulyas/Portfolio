@@ -58,7 +58,7 @@ let projectGroups = [
                 projectImageContainer: {
                     imageLeft: {
                         src: "webshop_database.png",
-                        alt: "A webshop adatbázis lekérdezéseiről készített képernyőkép."
+                        alt: "A webshop adatbázis létrehozásáról készített képernyőkép."
                     },
                     imageRight: {
                         src: "webshop_database_2.png",
@@ -66,7 +66,7 @@ let projectGroups = [
                     }
                 },
                 projectTextContainerRight: {
-                    description: "Ez a projekt egy online webáruház relációs adatbázisát valósítja meg.<br>A rendszer célja, hogy kezelje a felhasználókat, termékeket, rendeléseket, fizetéseket, szállítást és beszállítókat, ezzel támogatva a webáruház működését a termékek böngészésétől a megrendelés teljesítéséig.",
+                    description: "Ez a projekt egy online webáruház relációs adatbázisát valósítja meg.<br>A rendszer célja, hogy kezelje a felhasználókat, termékeket, rendeléseket, fizetéseket, szállítást és beszállítókat, ezzel támogatva a webáruház működését a termékek böngészésétől a megrendelés teljesítéséig.<br>A projekt összesen 30 adatbázis-műveletet tartalmaz, amelyek SELECT, INSERT, UPDATE és DELETE lekérdezésekből állnak.",
                     technologies: [
                         "MySQL"
                     ]
@@ -120,21 +120,21 @@ let projectGroups = [
                     texts: [
                         "A diagram a backend teljes logikáját mutatja: az entitásokat, a hozzájuk tartozó service metódusokat és a kapcsolatokat.",
                         "Több verziót készítettem, mert nehéz volt egyszerre átlátni minden funkciót és, hogy mikor hívják egymást a servicek.<br>Amikor végre összeállt az egész a fejemben az nagyon megnyugtató érzés volt.",
-                        "Kattints ide a kód megtekintéséhez!"
+                        "Kattints ide a kód és a diagramok megtekintéséhez!"
                     ]
                 },
                 projectImageContainer: {
                     imageLeft: {
-                        src: "barbie_webshop.png",
-                        alt: "A Barbie webshop backendjének kód részlete és mappaszerkezete látható képernyőképként."
+                        src: "barbie_webshop_2.png",
+                        alt: "A Barbie webshop kosár logikájának sequence diagramja látható képernyőképként."
                     },
                     imageRight: {
-                        src: "barbie_webshop_2.png",
+                        src: "barbie_webshop.png",
                         alt: "A Barbie webshop szerkezete látható diagram formájában."
                     }
                 },
                 projectTextContainerRight: {
-                    description: "A projekt célja egy webáruház fejlesztése, amely Barbie babákat és kiegészítőiket kínálja.<br>A platform lehetővé teszi a termékek böngészését, a kedvencek és a kosár kezelését, valamint a megrendelések leadását.<br>Jelenleg a projekt folyamatban van, a frontendet a társam készíti, én a backendet fejlesztem.",
+                    description: "A projekt célja egy webáruház fejlesztése, amely Barbie babákat és kiegészítőiket kínálja.<br>A platform lehetővé teszi a termékek böngészését, a kosár kezelését, valamint a megrendelések leadását.<br>A frontendet a társam készítette, én a backendet fejlesztettem.",
                     technologies: [
                         "ASP.NET Core (C#), EF Core (PostgreSQL)",
                         "HTML5, CSS3, JavaScript (Vanilla)",
@@ -145,29 +145,29 @@ let projectGroups = [
                     show: false,
                     isRight: true
                 },
-                githubUrl: 'https://github.com/GaborHeger/rendszerfejlesztes2025_c/tree/backend'
+                githubUrl: 'https://github.com/GaborHeger/rendszerfejlesztes2025_c'
             },
             {
                 title: "Kisállat örökbefogadó oldal",
                 projectTextContainerLeft: {
                     texts: [
-                        "A képen az adatbázis struktúra szerepel.",
-                        "A büszkeségem részt még nem tudom kitölteni, amint kész lesz egy kiemelt funkció, frissítem a tartalmat.",
+                        "Amire ennél a projektnél büszke vagyok, hogy végre megvalósítottam pár elemet, amit régóta szerettem volna. Az egyik ilyen elem a képen látható slider, ezenkívűl még az ugrás az oldal tetejére és a vágólapra másolás gomb.",
+                        "Sokáig nézegettem és mutogattam másoknak őket, milyen klassz, hogy működnek!",
                         "Kattints ide a kód megtekintéséhez!"
                     ]
                 },
                 projectImageContainer: {
                     imageLeft: {
                         src: "pet_adoption_website.png",
-                        alt: "A webshop adatbázis lekérdezéseiről készített képernyőkép."
+                        alt: "A webshop állatok oldala látható a képen."
                     },
                     imageRight: {
                         src: "pet_adoption_website_2.png",
-                        alt: "A webshop adatbázis EK diagramja."
+                        alt: "A főoldalon található slider-ről készített kép látható."
                     }
                 },
                 projectTextContainerRight: {
-                    description: "Ez a projekt egy kisállatok örökbefogadását támogató weboldal.<br>A publikus oldal minden látogató számára elérhető, a felhasználói interakciók pedig regisztrációhoz kötöttek.<br>A projekt jelenleg egy 3 fős csapatmunkában készül, én felelek az adatbázisért, az állatok oldalának frontend és backend részeiért, valamint az örökbefogadó űrlap kezeléséért.",
+                    description: "Ez a projekt egy kisállatok örökbefogadását támogató weboldal. A publikus oldal minden látogató számára elérhető, a felhasználói interakciók pedig regisztrációhoz kötöttek.<br>A projekt 3 fős csapatmunkában készült, én alkottam meg az adatbázist, a főoldalt, az állatok, segítségnyújtás, állatok részletei oldalakat, az örökbe fogadó űrlapot, a header-t és a footer-t kliens és szerver oldalon is.",
                     technologies: [
                         "MySQL, PHP",
                         "HTML5, CSS3, JavaScript (Vanilla)"
@@ -250,12 +250,23 @@ function generateCardMobile(cardData, template) {
     const cardBack = card.querySelector('.card-back');
 
     const textContainerBack = cardBack.querySelector(".project-text-container-mobile");
-    cardData.projectTextContainerLeft.texts.forEach(text =>{
-        const p = document.createElement("p");
-        p.innerHTML = text;
-        p.classList.add("project-text-mobile");
-        textContainerBack.appendChild(p);
-    })
+    const texts = cardData.projectTextContainerLeft.texts;
+
+    for (let i = 0; i < texts.length; i++) {
+        if (i < texts.length - 1) {
+            const p = document.createElement("p");
+            p.innerHTML = texts[i];
+            p.classList.add("project-text-mobile");
+            textContainerBack.appendChild(p);
+        } else {
+            const a = document.createElement("a");
+            a.href = cardData.githubUrl;
+            a.addEventListener('click', event => event.stopPropagation());
+            a.innerHTML = texts[i];
+            a.classList.add("project-text-mobile");
+            textContainerBack.appendChild(a);
+        }
+    }
 
     const projectImageContainerFront = cardFront.querySelector(".project-image-container-mobile");
     const img1 = document.createElement("img");
@@ -354,7 +365,7 @@ externalContainers.forEach(container => {
 //mobil: tap = pause
 externalContainers.forEach(container => {
     container.addEventListener('touchstart', () => {
-        paused = !paused;
+        paused = true;
     });
 });
 
@@ -477,11 +488,10 @@ function checkForOutsideClick(event) {
 // Smooth scroll to section
 function smoothScrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
+    const offset = 40;
+    const y = section.getBoundingClientRect().top + window.scrollY - offset;
 
-    section.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-    })
+    window.scrollTo({top: y, behavior: 'smooth'})
 }
 
 
@@ -531,23 +541,30 @@ function watchScrollBtnDistance() {
 }
 
 // Flip Animation
-document.addEventListener("DOMContentLoaded", () => {
-    const cards = document.querySelectorAll(".project-card-mobile");
+let projectsPaused = false;
+const projectsReadTime = 5000;
 
-    cards.forEach(card => {
-        card.addEventListener("click", () => {
-            card.classList.add("flipped");
+const cards = document.querySelectorAll(".project-card-mobile");
 
-            card.addEventListener("mouseenter", () => {
-                clearTimeout(timeoutId);
-            });
+function projectsFlipAll() {
+    if (!projectsPaused) {
+        cards.forEach(card => card.classList.toggle('flipped'));
+    }
+}
 
-            card.addEventListener("mouseleave", () => {
-                timeoutId = setTimeout(() => {
-                    card.classList.remove("flipped");
-                }, 5000);
-            });
-        });
+setInterval(projectsFlipAll, projectsReadTime);
+
+cards.forEach(card => {
+    card.addEventListener('mouseenter', () => projectsPaused = true);
+    card.addEventListener('mouseleave', () => projectsPaused = false);
+
+    card.addEventListener('touchstart', () => {
+        projectsPaused = true;
+    });
+
+    card.addEventListener('click', (e) => {
+        e.stopPropagation();
+        card.classList.toggle('flipped');
     });
 });
 
