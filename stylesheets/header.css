@@ -73,6 +73,10 @@ nav li a{
     transition: 0.3s;
 }
 
+nav li a.nav-li {
+    cursor: pointer;
+}
+
 nav li a.nav-li:hover{
     background-color: #1c2841;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
