@@ -6,7 +6,7 @@ Live demo: https://csilla-gulyas.github.io/Portfolio/
 
 ---
 
-## About the Project
+## Projekt célja
 
 A portfólió célja, hogy átlátható képet adjon a webfejlesztés területén szerzett tapasztalataimról, valamint az eddigi egyéni és tanulmányi projektjeimről.  
 Az oldal elsősorban junior / gyakornoki pozíciókra való jelentkezéshez készült.
@@ -31,7 +31,7 @@ Az oldal elsősorban junior / gyakornoki pozíciókra való jelentkezéshez kés
 
 ---
 
-## Setup / Usage
+## Használati útmutató
 
 A portfólió statikus weboldalként működik, telepítést nem igényel.  
 A repository klónozása után a fájlok közvetlenül megnyithatók böngészőben.
