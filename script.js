@@ -261,6 +261,7 @@ function generateCardMobile(cardData, template) {
         } else {
             const a = document.createElement("a");
             a.href = cardData.githubUrl;
+            a.target = "_blank"
             a.addEventListener('click', event => event.stopPropagation());
             a.innerHTML = texts[i];
             a.classList.add("project-text-mobile");
